@@ -1,13 +1,13 @@
 # Assignment: create a function that returns multiple values (move all user inputs in one function)
-def get_user_inputs():
+def get_user_inputs():  # function for collecting inputs
     name_l = input("Please enter you name: ")
     age_l = input("Please enter your age in years: ")
     address_l = input("Please enter your address: ")
-    return name_l, age_l, address_l
+    return name_l, age_l, address_l  # returned 3 inputs
 
 
-def display(name, age, address):
-    print("\nHi, my name is " + name + ". I am " + age +  # this is the final output
+def display(name, age, address):  # the values of inputs are passed to be used inside the function
+    print("\nHi, my name is " + name + ". I am " + age +  # this is the final output if the inputs are acceptable
           " years old and I live in " + address + ".")
 
 
@@ -27,8 +27,11 @@ def age_validation(nameF, ageF, addressF):
         print("\nError. Only whole numbers are accepted for age.")
 
 
+# the inputs from get_user_input() function stored in 3 variables
 name_g, age_g, address_g = get_user_inputs()
+
 if(name_g == "" or age_g == "" or address_g == ""):  # empty inputs are also restricted
     print("\nEmpty input is invalid.")
 else:
+    # this prompts the system to execute the codes under age_validation function
     age_validation(name_g, age_g, address_g)
