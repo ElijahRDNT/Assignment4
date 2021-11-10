@@ -1,7 +1,7 @@
 # Assignment: create a function that returns multiple values (move all user inputs in one function)
-try:
+try: # the system will try the set of codes under "try". If can't be executed, it will proceed to "except"
     
-    def get_user_inputs(): 
+    def get_user_inputs(): # function for collecting inputs
         money_input = float(  # float is used to enable decimal points because money is the subject
             input("Please enter the amount of money you have: "))
         apple_input = float(  # float is used to enable decimal points because money is the subject if talking about price
