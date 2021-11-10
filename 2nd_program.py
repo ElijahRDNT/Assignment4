@@ -1,16 +1,21 @@
 # Assignment: create a function that returns multiple values (move all user inputs in one function)
+# constant values are placed at the top so it won't be disrupted while editting the whole program
 apple_price = 20
 orange_price = 25
 
-
+print("\nFRUIT              PRICE")
+print("Apple  =========> Php20.00")
+print("Orange =========> Php25.00")    
+                
 def get_user_input():  # function for collecting inputs
     apple_l = input(
-        "Please enter the number of apples you want to buy: ")
+        "\n\nPlease enter the number of apples you want to buy: ")
     orange_l = input(
         "Please enter the number of oranges you want to buy: ")
     return apple_l, orange_l
 
 
+# function for computation and printing of target final output
 def final_output(applesP, orangesP):
     amount = ((applesP*apple_price) +  # no. of apples and oranges are multiplied by their respective prices, then add together to get the total amount
               (orangesP*orange_price))
