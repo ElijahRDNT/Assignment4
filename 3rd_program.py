@@ -6,10 +6,13 @@ def get_user_inputs():
         input("Please enter the price of an apple that you would like to buy: "))
     return money_input, apple_input    
 
-money, apple = get_user_inputs()
+def final_output(moneyF, appleF):  # function for computation
+    # this is converted to integer data type to avoid decimal places while flashing no. of apples
+    max_apple = int(moneyF//appleF)
+    change = moneyF % appleF
 
-max_apple = int(money//apple)
-change = money % apple
-
-print(
+    print(
     "You can buy " + str(max_apple) + " apples and your change is " + str(change) + " pesos.")
+
+money, apple = get_user_inputs()
+final_output(money, apple)
