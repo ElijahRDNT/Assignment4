@@ -1,15 +1,18 @@
-#Assignment: create a function that returns multiple values (move all user inputs in one function)
-def get_user_inputs():
+# Assignment: create a function that returns multiple values (move all user inputs in one function)
+def get_user_inputs():  # function for collecting inputs
     name_l = input("Please enter you name: ")
     age_l = input("Please enter your age in years: ")
     address_l = input("Please enter your address: ")
-    return name_l, age_l, address_l
+    return name_l, age_l, address_l  # returned 3 inputs
 
-def display(name, age, address):
-    print("\nHi, my name is " + name + ". I am " + age +  # this is the final output
-            " years old and I live in " + address + ".")
 
-def age_validation(nameF, ageF, addressF):  # this function contains validation for age input such as the data type or value
+def display(name, age, address):  # the values of inputs are passed to be used inside the function
+    print("\nHi, my name is " + name + ". I am " + age +  # this is the final output if the inputs are acceptable
+          " years old and I live in " + address + ".")
+
+
+# this function contains validation for age input such as the data type or value
+def age_validation(nameF, ageF, addressF):
     try:  # the system will try the set of codes under "try". If can't be executed, it will proceed to "except"
         age_int = int(ageF)
 
@@ -23,5 +26,12 @@ def age_validation(nameF, ageF, addressF):  # this function contains validation 
     except ValueError:
         print("\nError. Only whole numbers are accepted for age.")
 
+
+# the inputs from get_user_input() function stored in 3 variables
 name_g, age_g, address_g = get_user_inputs()
-age_validation(name_g, age_g, address_g)
+
+if(name_g == "" or age_g == "" or address_g == ""):  # empty inputs are also restricted
+    print("\nEmpty input is invalid.")
+else:
+    # this prompts the system to execute the codes under age_validation function
+    age_validation(name_g, age_g, address_g)
